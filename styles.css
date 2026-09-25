@@ -913,3 +913,637 @@ h1 {
     transition: none !important;
   }
 }
+
+
+/* =========================================================
+   Responsive hardening: desktop, laptop, tablet and phones
+   ========================================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-cta,
+.button,
+.mobile-sticky-cta,
+.open-house-banner > a,
+.video-toolbar > a {
+  min-height: 44px;
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  :root {
+    --shell: min(1280px, calc(100% - 80px));
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, .55fr);
+    gap: 92px;
+  }
+
+  .video-stage {
+    max-width: 390px;
+    justify-self: end;
+  }
+
+  .section {
+    padding-block: 128px;
+  }
+}
+
+/* Standard laptop / small desktop */
+@media (max-width: 1180px) {
+  :root {
+    --shell: min(1040px, calc(100% - 40px));
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+    gap: 46px;
+  }
+
+  h1 {
+    font-size: clamp(3.4rem, 6.4vw, 5.8rem);
+  }
+
+  .price-card {
+    right: -12px;
+  }
+
+  .content-grid {
+    gap: 64px;
+  }
+
+  .location-grid {
+    gap: 56px;
+  }
+}
+
+/* Tablet landscape / compact laptop */
+@media (max-width: 1024px) {
+  :root {
+    --shell: min(900px, calc(100% - 36px));
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .nav {
+    grid-template-columns: 1fr auto;
+    min-height: 68px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    padding: 58px 0 68px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .hero-stats div {
+    min-width: 104px;
+  }
+
+  .open-house-banner {
+    grid-template-columns: auto 1fr;
+  }
+
+  .open-house-banner > a {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .video-stage {
+    width: 100%;
+    max-width: 320px;
+    justify-self: end;
+  }
+
+  .price-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin: 12px 8px 0;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .trust-grid > div {
+    padding: 20px 18px;
+  }
+
+  .content-grid {
+    grid-template-columns: .9fr 1.1fr;
+    gap: 44px;
+  }
+
+  .section {
+    padding-block: 88px;
+  }
+
+  .section h2 {
+    font-size: clamp(2.35rem, 5.3vw, 4rem);
+  }
+
+  .location-grid {
+    grid-template-columns: 1fr .75fr;
+    gap: 42px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 840px) {
+  :root {
+    --shell: min(720px, calc(100% - 32px));
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .video-stage {
+    width: min(100%, 390px);
+    max-width: 390px;
+    justify-self: center;
+  }
+
+  .video-frame {
+    width: 100%;
+  }
+
+  .price-card {
+    margin-inline: 12px;
+  }
+
+  .content-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .feature-card {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .feature-card > span {
+    margin-bottom: 28px;
+  }
+
+  .final-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .final-actions {
+    width: min(100%, 320px);
+  }
+}
+
+/* Large phones / small tablets */
+@media (max-width: 680px) {
+  :root {
+    --shell: calc(100% - 28px);
+  }
+
+  body {
+    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  .nav {
+    min-height: 62px;
+    gap: 12px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-copy {
+    display: none;
+  }
+
+  .nav-cta {
+    padding: 9px 13px;
+    font-size: .76rem;
+    white-space: nowrap;
+  }
+
+  .hero {
+    padding: 42px 0 52px;
+  }
+
+  .availability {
+    margin-bottom: 20px;
+    font-size: .74rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 12px;
+    font-size: .7rem;
+    letter-spacing: .12em;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2.9rem, 15vw, 4.45rem);
+    line-height: .94;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-lead {
+    margin-bottom: 22px;
+    font-size: 1.02rem;
+    line-height: 1.55;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .hero-stats div {
+    min-width: 0;
+    padding: 11px 12px;
+  }
+
+  .hero-stats strong {
+    font-size: 1.2rem;
+  }
+
+  .open-house-banner {
+    grid-template-columns: 46px minmax(0, 1fr);
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .open-house-copy strong {
+    font-size: .88rem;
+  }
+
+  .open-house-banner > a {
+    grid-column: 2;
+    min-height: 0;
+    font-size: .82rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 50px;
+    padding-inline: 16px;
+    font-size: .88rem;
+    text-align: center;
+  }
+
+  .microcopy {
+    font-size: .75rem;
+  }
+
+  .video-stage {
+    width: min(100%, 340px);
+  }
+
+  .video-shell {
+    padding: 10px;
+    border-radius: 24px;
+  }
+
+  .video-frame {
+    border-radius: 17px;
+  }
+
+  .price-card {
+    margin: 10px 6px 0;
+    min-width: 0;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust-grid > div,
+  .trust-grid > div:first-child {
+    padding: 18px 16px;
+    border-left: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-grid > div:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .trust-grid > div:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+
+  .section {
+    padding-block: 72px;
+  }
+
+  .section h2 {
+    font-size: clamp(2.35rem, 11.5vw, 3.5rem);
+    line-height: 1;
+  }
+
+  .lead-paragraph {
+    font-size: 1.18rem !important;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    margin-top: 42px;
+  }
+
+  .feature-card {
+    padding: 24px;
+  }
+
+  .feature-card > span {
+    margin-bottom: 20px;
+  }
+
+  .location-card {
+    padding: 26px;
+  }
+
+  .location-number {
+    font-size: clamp(4rem, 20vw, 5.4rem);
+  }
+
+  .final-card {
+    padding: 26px 22px;
+    border-radius: 24px;
+  }
+
+  .final-actions {
+    width: 100%;
+    max-width: none;
+  }
+
+  .footer {
+    padding-bottom: calc(38px + env(safe-area-inset-bottom));
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .footer-inner p {
+    text-align: left;
+  }
+
+  .mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    z-index: 120;
+    min-height: 52px;
+    padding: 15px 18px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--ink);
+    text-align: center;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 900;
+    box-shadow: 0 16px 42px rgba(0,0,0,.24);
+  }
+}
+
+/* Small phones */
+@media (max-width: 430px) {
+  :root {
+    --shell: calc(100% - 22px);
+  }
+
+  .nav {
+    min-height: 58px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-cta {
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero {
+    padding-top: 34px;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 14.8vw, 3.85rem);
+  }
+
+  .hero-lead {
+    font-size: .98rem;
+  }
+
+  .open-house-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .open-house-copy span {
+    font-size: .64rem;
+  }
+
+  .open-house-copy strong {
+    font-size: .82rem;
+  }
+
+  .video-toolbar {
+    min-height: 50px;
+  }
+
+  .trust-grid > div {
+    padding: 16px 13px;
+  }
+
+  .trust-grid strong {
+    font-size: 1.1rem;
+  }
+
+  .section {
+    padding-block: 62px;
+  }
+
+  .section h2 {
+    font-size: clamp(2.15rem, 11vw, 3rem);
+  }
+
+  .lead-paragraph {
+    font-size: 1.12rem !important;
+  }
+
+  .feature-card,
+  .location-card,
+  .final-card {
+    border-radius: 20px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  :root {
+    --shell: calc(100% - 18px);
+  }
+
+  .nav-cta {
+    padding-inline: 10px;
+    font-size: .7rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .open-house-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .open-house-icon {
+    display: none;
+  }
+
+  .open-house-banner > a {
+    grid-column: 1;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-grid > div {
+    border-right: 0;
+  }
+
+  .trust-grid > div:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .trust-grid > div:last-child {
+    border-bottom: 0;
+  }
+
+  .location-card {
+    padding: 22px;
+  }
+}
+
+/* Short landscape phones */
+@media (max-height: 520px) and (orientation: landscape) and (max-width: 950px) {
+  .site-header {
+    position: relative;
+  }
+
+  .hero {
+    padding-block: 32px 44px;
+  }
+
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 280px);
+    gap: 26px;
+    align-items: start;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 7vw, 4rem);
+  }
+
+  .hero-stats {
+    display: none;
+  }
+
+  .video-stage {
+    width: 100%;
+    max-width: 280px;
+    justify-self: end;
+  }
+
+  .price-card {
+    display: none;
+  }
+
+  .section {
+    padding-block: 58px;
+  }
+
+  .mobile-sticky-cta {
+    display: none;
+  }
+}
+
+/* Touch devices: avoid hover-only interactions */
+@media (hover: none) {
+  .button:hover {
+    transform: none;
+  }
+
+  .nav-links a:hover,
+  .open-house-banner > a:hover,
+  .plain-link:hover,
+  .text-cta:hover {
+    text-decoration: none;
+  }
+}
