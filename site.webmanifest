@@ -1,0 +1,9 @@
+{
+  "name": "Strandlodsvej 25D",
+  "short_name": "Strandlodsvej 25D",
+  "start_url": "/strandlodsvej-25d/",
+  "display": "standalone",
+  "background_color": "#f5f4f1",
+  "theme_color": "#1d3a35",
+  "lang": "da"
+}
