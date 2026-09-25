@@ -203,3 +203,33 @@ footer {
     box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
   }
 }
+
+
+.secondary-cta {
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.secondary-cta:hover {
+  background: #f2f5f4;
+}
+
+.video-card {
+  margin-top: 52px;
+  padding: 34px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.video-card h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .secondary-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
