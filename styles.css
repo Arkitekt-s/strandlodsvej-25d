@@ -47,7 +47,8 @@ a{color:inherit;-webkit-tap-highlight-color:transparent}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(330px,.56fr);gap:clamp(56px,7vw,94px);align-items:center}
 .hero-copy{min-width:0}
 .availability{display:inline-flex;align-items:center;gap:10px;margin-bottom:30px;padding:8px 13px;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.035);color:rgba(255,255,255,.74);font-size:.74rem;font-weight:750;letter-spacing:.02em}
-.pulse{width:7px;height:7px;border-radius:50%;background:#8fcca1;box-shadow:0 0 0 6px rgba(143,204,161,.11)}
+.pulse{width:7px;height:7px;border-radius:50%;background:#8fcca1;box-shadow:0 0 0 4px rgba(143,204,161,.10),0 0 10px rgba(143,204,161,.34);animation:statusPulse 3s ease-in-out infinite}
+@keyframes statusPulse{0%,100%{opacity:.72;box-shadow:0 0 0 3px rgba(143,204,161,.08),0 0 7px rgba(143,204,161,.22)}50%{opacity:1;box-shadow:0 0 0 8px rgba(143,204,161,.14),0 0 16px rgba(143,204,161,.48)}}
 .eyebrow{margin:0 0 16px;color:rgba(234,214,178,.72);font-size:.68rem;font-weight:850;letter-spacing:.2em;text-transform:uppercase}
 .eyebrow.dark{color:var(--gold-deep)}
 .eyebrow.light{color:rgba(234,214,178,.74)}
@@ -281,4 +282,5 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important}
+  .pulse{animation:none}
 }
