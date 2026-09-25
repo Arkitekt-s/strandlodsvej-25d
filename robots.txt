@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arkitekt-s.github.io/strandlodsvej-25d/sitemap.xml
+Sitemap: https://strandlodsvej25d.dk/sitemap.xml
