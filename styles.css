@@ -26,9 +26,69 @@ body {
 }
 
 .hero {
-  padding: 96px 0 88px;
+  padding: 72px 0 82px;
   background: linear-gradient(145deg, #ece8e1, #f8f7f4);
   border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 54px;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 340px;
+  justify-self: end;
+  padding: 12px;
+  border-radius: 28px;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(255,255,255,.9);
+  box-shadow: 0 24px 60px rgba(25, 36, 33, .18);
+  backdrop-filter: blur(12px);
+}
+
+.hero-video-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 5px 10px;
+  font-size: .78rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.hero-video-top span {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.hero-video-top a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 267 / 476;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #111;
+}
+
+.hero-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .eyebrow {
@@ -233,7 +293,17 @@ footer {
 
 @media (max-width: 720px) {
   body { padding-bottom: 76px; }
-  .hero { padding: 68px 0 62px; }
+  .hero { padding: 48px 0 62px; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-video {
+    justify-self: center;
+    max-width: 330px;
+  }
 
   .open-house {
     display: block;
