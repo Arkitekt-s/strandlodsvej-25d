@@ -274,6 +274,9 @@ def main():
     text = visible_text(source_html)
     price = extract_price(text)
     open_house = extract_open_house(text, today)
+    # Never publish an open house after its end time, even if home.dk is slow to remove it.
+    if open_house and open_house["end"] <= now:
+        open_house = None
 
     original = INDEX_PATH.read_text(encoding="utf-8")
     updated = update_json_ld(original, price, open_house, today)
