@@ -120,11 +120,11 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 .feature-card p{max-width:290px;margin-bottom:0;color:var(--muted);font-size:.9rem;line-height:1.65}
 
 .floorplan-section{padding-top:96px;background:var(--paper)}
-.floorplan-intro{margin-bottom:36px}
+.floorplan-intro{max-width:760px;margin:0 auto 24px}
 .floorplan-intro h2{margin-bottom:16px}
 .floorplan-intro>p:not(.eyebrow){max-width:650px;margin-bottom:0;color:var(--muted);font-size:1.02rem}
-.floorplan-card{display:block;overflow:hidden;border:1px solid rgba(22,24,20,.09);border-radius:30px;background:var(--white);box-shadow:var(--shadow-soft);text-decoration:none}
-.floorplan-card img{display:block;width:100%;height:auto;background:var(--white)}
+.floorplan-card{display:block;width:min(100%,760px);margin-inline:auto;overflow:hidden;border:1px solid rgba(22,24,20,.09);border-radius:30px;background:var(--white);box-shadow:var(--shadow-soft);text-decoration:none}
+.floorplan-card img{display:block;width:100%;height:auto;max-height:min(50svh,480px);object-fit:contain;background:var(--white)}
 .floorplan-action{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 26px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem;font-weight:750}
 .floorplan-action>span:last-child{color:var(--gold-deep);font-family:Georgia,"Times New Roman",serif;font-size:1.35rem}
 
@@ -246,6 +246,7 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
   .floorplan-section{padding-top:62px}
   .floorplan-intro{margin-bottom:26px}
   .floorplan-card{border-radius:22px}
+  .floorplan-card img{max-height:min(52svh,420px)}
   .floorplan-action{padding:16px 18px}
   .location-card{padding:28px}
   .location-number{font-size:clamp(4.2rem,20vw,5.8rem)}
