@@ -239,14 +239,15 @@ def update_banner(page, open_house):
 
 def update_price_card(page, price):
     sqm_price = round(price / AREA_M2)
-    replacement = (
-        r"\1"
-        + f"{format_number(price)} kr."
-        + r"\2"
-        + f"{format_number(sqm_price)} kr./m²"
-        + r"\3"
-    )
-    updated, count = PRICE_CARD_RE.subn(replacement, page, count=1)
+    # Use a callback: a price starting with a digit must not turn \\1 into \\17.
+    def render(match):
+        return (
+            f"{match.group(1)}{format_number(price)} kr."
+            f"{match.group(2)}{format_number(sqm_price)} kr./m²"
+            f"{match.group(3)}"
+        )
+
+    updated, count = PRICE_CARD_RE.subn(render, page, count=1)
     if count != 1:
         raise RuntimeError("Could not find the visible price card in index.html")
     return updated
