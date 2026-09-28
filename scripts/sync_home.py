@@ -275,6 +275,15 @@ def main():
     text = visible_text(source_html)
     price = extract_price(text)
     open_house = extract_open_house(text, today)
+    if open_house is None:
+        # Diagnose whether Home exposes the event in the retrieved HTML.
+        for needle in ("4. oktober", "04. oktober", "2026-10-04", "åbent hus", "openhouse"):
+            match = re.search(re.escape(needle), source_html, re.IGNORECASE)
+            if match:
+                excerpt = source_html[max(0, match.start() - 80):match.end() + 160]
+                print(f"Home source contains {needle!r}: {excerpt[:260]!r}")
+            else:
+                print(f"Home source has no occurrence of {needle!r}")
     # Never publish an open house after its end time, even if home.dk is slow to remove it.
     if open_house and open_house["end"] <= now:
         open_house = None
