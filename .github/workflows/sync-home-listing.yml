@@ -1,6 +1,10 @@
 name: Sync home.dk listing
 
 on:
+  push:
+    paths:
+      - "scripts/sync_home.py"
+      - ".github/workflows/sync-home-listing.yml"
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
