@@ -26,7 +26,7 @@ jobs:
           im = Image.open("floorplan.jpg").convert("RGB")
           w,h=im.size
           # Skip the source image's corner compass and footer disclaimer.
-          roi=(round(.15*w),round(.15*h),round(.85*w),round(.85*h))
+          roi=(round(.02*w),round(.15*h),round(.98*w),round(.85*h))
           gray=ImageOps.grayscale(im.crop(roi))
           mask=gray.point(lambda v: 255 if v < 185 else 0)
           bounds=mask.getbbox()
