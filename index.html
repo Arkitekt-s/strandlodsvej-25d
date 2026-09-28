@@ -329,15 +329,24 @@
       </div>
 
       <div class="shell">
-        <a class="floorplan-card" href="/floorplan.jpg" target="_blank" rel="noopener" aria-label="Åbn plantegningen i fuld størrelse">
-          <img src="/floorplan.jpg" alt="Plantegning for Strandlodsvej 25D, 2. th." loading="lazy">
+        <a class="floorplan-card floorplan-trigger" href="/floorplan-preview.png" target="_blank" rel="noopener" aria-label="Åbn plantegningen" aria-haspopup="dialog">
+          <img src="/floorplan-preview.png" alt="Plantegning for Strandlodsvej 25D, 2. th. med to altaner" width="1881" height="1026" loading="lazy">
           <span class="floorplan-action">
-            <span>Tryk for fuld størrelse</span>
+            <span>Se plantegningen større</span>
             <span aria-hidden="true">↗</span>
           </span>
         </a>
       </div>
     </section>
+
+    <dialog class="floorplan-dialog" id="floorplan-dialog" aria-label="Plantegning for Strandlodsvej 25D">
+      <div class="floorplan-dialog-header">
+        <strong>Plantegning</strong>
+        <button class="floorplan-dialog-close" type="button" aria-label="Luk plantegningen">Luk ×</button>
+      </div>
+      <img src="/floorplan-preview.png" alt="Plantegning for Strandlodsvej 25D, 2. th. med to altaner" width="1881" height="1026">
+      <a class="floorplan-dialog-fullsize" href="/floorplan-preview.png" target="_blank" rel="noopener">Åbn billedet i fuld størrelse ↗</a>
+    </dialog>
 
     <section class="section section-dark" id="omraadet">
       <div class="shell location-grid">
@@ -398,5 +407,26 @@
       <p>Privat informationsside. Aktuelle og juridisk gældende salgsoplysninger findes hos home.dk.</p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const trigger = document.querySelector(".floorplan-trigger");
+      const dialog = document.getElementById("floorplan-dialog");
+      if (!trigger || !dialog || typeof dialog.showModal !== "function") return;
+
+      trigger.addEventListener("click", event => {
+        event.preventDefault();
+        dialog.showModal();
+        document.body.style.overflow = "hidden";
+      });
+      dialog.querySelector(".floorplan-dialog-close").addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", event => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener("close", () => {
+        document.body.style.overflow = "";
+        trigger.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
