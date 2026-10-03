@@ -275,6 +275,13 @@ def main():
     text = visible_text(source_html)
     price = extract_price(text)
     open_house = extract_open_house(text, today)
+
+    # The 4 October 2026 open house was cancelled.
+    # Suppress only that date; later open houses can publish automatically.
+    if open_house and open_house["start"].date() == dt.date(2026, 10, 4):
+        print("Ignoring cancelled open house on 2026-10-04.")
+        open_house = None
+
     if open_house is None:
         # Diagnose whether Home exposes the event in the retrieved HTML.
         for needle in ("4. oktober", "04. oktober", "2026-10-04", "åbent hus", "openhouse"):
