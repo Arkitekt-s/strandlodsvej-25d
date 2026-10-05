@@ -143,6 +143,14 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 .section-dark::before{content:"";position:absolute;width:520px;height:520px;left:-260px;bottom:-260px;border:1px solid rgba(200,165,107,.12);border-radius:50%;box-shadow:0 0 0 90px rgba(200,165,107,.025),0 0 0 180px rgba(200,165,107,.014)}
 .location-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr .62fr;gap:clamp(56px,7vw,92px);align-items:center}
 .location-copy{max-width:680px;color:rgba(255,255,255,.62);font-size:1.06rem;line-height:1.75}
+.location-side{display:grid;gap:18px}
+.location-photo{margin:0;overflow:hidden;border:1px solid rgba(234,214,178,.18);border-radius:30px;background:rgba(255,255,255,.035);box-shadow:0 24px 70px rgba(0,0,0,.22)}
+.location-photo img{display:block;width:100%;aspect-ratio:1.38/1;object-fit:cover;object-position:center 52%}
+.location-photo figcaption{display:grid;gap:5px;padding:14px 17px 16px;color:rgba(255,255,255,.72);font-size:.78rem;line-height:1.45}
+.location-photo figcaption strong{font-family:Georgia,"Times New Roman",serif;font-size:.93rem;font-weight:500;color:var(--white)}
+.location-photo figcaption span{color:rgba(255,255,255,.42);font-size:.67rem}
+.location-photo figcaption a{color:rgba(234,214,178,.72);text-decoration:none}
+.location-photo figcaption a:hover{text-decoration:underline}
 .location-card{position:relative;overflow:hidden;padding:38px;border:1px solid rgba(234,214,178,.18);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
 .location-card::after{content:"AMAGER";position:absolute;right:-6px;bottom:-18px;color:rgba(255,255,255,.025);font-family:Georgia,"Times New Roman",serif;font-size:5.7rem;letter-spacing:-.06em;pointer-events:none}
 .location-number{position:relative;z-index:1;font-family:Georgia,"Times New Roman",serif;font-size:clamp(4.5rem,8vw,7rem);line-height:.86;letter-spacing:-.065em}
@@ -265,6 +273,7 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
   .floorplan-dialog-header{margin-bottom:8px;padding:7px 8px 7px 12px;border-radius:12px}
   .floorplan-dialog img{max-height:calc(100dvh - 160px)}
   .location-card{padding:28px}
+  .location-photo{border-radius:24px}
   .location-number{font-size:clamp(4.2rem,20vw,5.8rem)}
   .final-card{padding:28px 22px;border-radius:24px}
   .final-actions{width:100%;max-width:none}
