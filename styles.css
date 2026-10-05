@@ -193,6 +193,24 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 .explore-card h3{margin:0 0 7px;font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;font-weight:500;letter-spacing:-.02em}
 .explore-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.6}
 .explore-arrow{color:var(--gold-deep);font-family:Georgia,"Times New Roman",serif;font-size:1.5rem}
+.buyer-actions{background:linear-gradient(180deg,#f3ede2,#ece4d7)}
+.buyer-actions-head{max-width:760px;margin-bottom:34px}
+.buyer-actions-head h2{margin-bottom:14px}
+.buyer-actions-head>p:not(.eyebrow){margin:0;color:var(--muted)}
+.buyer-actions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.buyer-action{display:block;min-height:245px;padding:34px;border:1px solid rgba(22,24,20,.10);border-radius:28px;background:rgba(255,255,255,.80);box-shadow:0 18px 54px rgba(30,35,29,.07);color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.buyer-action:hover{transform:translateY(-3px);border-color:rgba(157,122,69,.28);box-shadow:0 24px 64px rgba(30,35,29,.10)}
+.buyer-action-primary{background:linear-gradient(145deg,#1d2a23,#101713);color:var(--white);border-color:rgba(234,214,178,.18)}
+.buyer-action-kicker{display:block;margin-bottom:30px;color:var(--gold-deep);font-size:.66rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.buyer-action-primary .buyer-action-kicker{color:rgba(234,214,178,.72)}
+.buyer-action h3{margin:0 0 12px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.8rem,3vw,2.45rem);font-weight:500;letter-spacing:-.03em}
+.buyer-action p{max-width:440px;margin:0 0 28px;color:var(--muted);font-size:.92rem}
+.buyer-action-primary p{color:rgba(255,255,255,.58)}
+.buyer-action-link{font-size:.82rem;font-weight:850;color:var(--gold-deep)}
+.buyer-action-primary .buyer-action-link{color:var(--gold-light)}
+.secondary-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:24px;color:var(--muted);font-size:.78rem}
+.secondary-links a{color:var(--ink);font-weight:750;text-decoration:none}
+.secondary-links a:hover{text-decoration:underline}
 .final-cta{background:radial-gradient(circle at 85% 20%,rgba(200,165,107,.12),transparent 28%),#eee7db}
 .final-card{display:grid;grid-template-columns:1fr auto;gap:72px;align-items:end;padding:54px;border:1px solid rgba(22,24,20,.09);border-radius:30px;background:rgba(255,255,255,.80);box-shadow:0 24px 70px rgba(30,35,29,.08);backdrop-filter:blur(12px)}
 .final-card h2{margin-bottom:16px}
@@ -242,6 +260,7 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:840px){
+  .buyer-actions-grid{grid-template-columns:1fr}
   .explore-grid{grid-template-columns:1fr}
   .metro-card-grid{grid-template-columns:1fr}
   :root{--shell:min(720px,calc(100% - 32px))}
@@ -257,6 +276,10 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:680px){
+  .buyer-actions-head{margin-bottom:24px}
+  .buyer-action{min-height:0;padding:26px;border-radius:22px}
+  .buyer-action-kicker{margin-bottom:22px}
+  .secondary-links{gap:9px 10px;margin-top:20px}
   .explore-intro{margin-bottom:28px}
   .explore-card{min-height:0;padding:20px;border-radius:20px}
   .explore-card h3{font-size:1.35rem}
