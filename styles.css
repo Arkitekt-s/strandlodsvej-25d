@@ -171,6 +171,17 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 .location-card p{position:relative;z-index:1;margin:20px 0 30px;color:rgba(255,255,255,.58);font-size:.92rem}
 .location-card a{position:relative;z-index:1;color:var(--gold-light);font-size:.84rem;font-weight:850;text-decoration:none}
 
+.explore-section{background:linear-gradient(180deg,#f8f4ec,#f2ebdf)}
+.explore-intro{max-width:760px;margin-bottom:42px}
+.explore-intro h2{margin-bottom:16px}
+.explore-intro>p:not(.eyebrow){max-width:650px;margin:0;color:var(--muted);font-size:1rem}
+.explore-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.explore-card{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;min-height:150px;padding:26px 28px;border:1px solid rgba(22,24,20,.10);border-radius:24px;background:rgba(255,255,255,.82);box-shadow:0 14px 42px rgba(35,38,32,.05);color:var(--ink);text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.explore-card:hover{transform:translateY(-3px);border-color:rgba(157,122,69,.32);box-shadow:0 20px 54px rgba(35,38,32,.09)}
+.explore-number{display:grid;place-items:center;width:42px;height:42px;border:1px solid rgba(157,122,69,.24);border-radius:50%;color:var(--gold-deep);font-family:Georgia,"Times New Roman",serif;font-size:.78rem}
+.explore-card h3{margin:0 0 7px;font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;font-weight:500;letter-spacing:-.02em}
+.explore-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.6}
+.explore-arrow{color:var(--gold-deep);font-family:Georgia,"Times New Roman",serif;font-size:1.5rem}
 .final-cta{background:radial-gradient(circle at 85% 20%,rgba(200,165,107,.12),transparent 28%),#eee7db}
 .final-card{display:grid;grid-template-columns:1fr auto;gap:72px;align-items:end;padding:54px;border:1px solid rgba(22,24,20,.09);border-radius:30px;background:rgba(255,255,255,.80);box-shadow:0 24px 70px rgba(30,35,29,.08);backdrop-filter:blur(12px)}
 .final-card h2{margin-bottom:16px}
@@ -220,6 +231,7 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:840px){
+  .explore-grid{grid-template-columns:1fr}
   .metro-card-grid{grid-template-columns:1fr}
   :root{--shell:min(720px,calc(100% - 32px))}
   .hero-grid{grid-template-columns:1fr;gap:48px}
@@ -234,6 +246,9 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:680px){
+  .explore-intro{margin-bottom:28px}
+  .explore-card{min-height:0;padding:20px;border-radius:20px}
+  .explore-card h3{font-size:1.35rem}
   .metro-photo img{height:230px}
   .metro-card{border-radius:22px}
   :root{--shell:calc(100% - 28px)}
