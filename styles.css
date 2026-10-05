@@ -141,6 +141,19 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 
 .section-dark{overflow:hidden;background:radial-gradient(circle at 78% 28%,rgba(200,165,107,.10),transparent 28%),linear-gradient(145deg,#101713,#1b2721);color:var(--white)}
 .section-dark::before{content:"";position:absolute;width:520px;height:520px;left:-260px;bottom:-260px;border:1px solid rgba(200,165,107,.12);border-radius:50%;box-shadow:0 0 0 90px rgba(200,165,107,.025),0 0 0 180px rgba(200,165,107,.014)}
+.metro-section{background:#fbf8f2}
+.metro-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:46px}
+.metro-card{overflow:hidden;border:1px solid var(--line);border-radius:28px;background:#fff;box-shadow:0 20px 60px rgba(22,24,20,.07)}
+.metro-photo{display:block;overflow:hidden;background:#e9e4db}
+.metro-photo img{display:block;width:100%;height:280px;object-fit:cover;transition:transform .35s ease}
+.metro-photo:hover img{transform:scale(1.02)}
+.metro-card-copy{padding:24px 26px 26px}
+.metro-card-copy>span{display:block;margin-bottom:8px;color:var(--gold-deep);font-size:.68rem;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.metro-card-copy h3{margin-bottom:10px;font-family:Georgia,"Times New Roman",serif;font-size:1.45rem;font-weight:500}
+.metro-card-copy p{margin-bottom:14px;color:var(--muted);line-height:1.65}
+.metro-card-copy small{display:block;color:#918c82;font-size:.66rem;line-height:1.5}
+.metro-source-note{margin-top:16px}
+.metro-source-note p{margin:0;color:var(--muted);font-size:.74rem;line-height:1.6}
 .location-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr .62fr;gap:clamp(56px,7vw,92px);align-items:center}
 .location-copy{max-width:680px;color:rgba(255,255,255,.62);font-size:1.06rem;line-height:1.75}
 .location-side{display:grid;gap:18px}
@@ -207,6 +220,7 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:840px){
+  .metro-card-grid{grid-template-columns:1fr}
   :root{--shell:min(720px,calc(100% - 32px))}
   .hero-grid{grid-template-columns:1fr;gap:48px}
   .hero-copy{max-width:720px}
@@ -220,6 +234,8 @@ h1{max-width:800px;margin-bottom:26px;font-family:Georgia,"Times New Roman",seri
 }
 
 @media (max-width:680px){
+  .metro-photo img{height:230px}
+  .metro-card{border-radius:22px}
   :root{--shell:calc(100% - 28px)}
   body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
   .site-header{position:relative}
