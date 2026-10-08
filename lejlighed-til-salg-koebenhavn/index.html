@@ -18,7 +18,23 @@
 .section-dark p:not(.eyebrow){color:#e9e8e1!important}
 .section-dark .plain-link{color:#f5f0e7!important}
 .amager-landing-hero a,.section-dark a,.final-cta a,header a,footer a{position:relative;z-index:10;pointer-events:auto!important;touch-action:manipulation}
-.copenhagen-video-card{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:25px 18px;border:1px solid rgba(200,165,107,.28);border-radius:24px;background:#17241e;box-shadow:0 22px 60px rgba(0,0,0,.22)}.copenhagen-video-card .eyebrow{color:#ead6b2!important;margin:0}.copenhagen-video-frame{width:267px;max-width:100%;min-height:476px;overflow:hidden;border-radius:14px;background:#101713}.copenhagen-video-frame iframe{display:block;max-width:100%}.copenhagen-video-link{color:#ead6b2!important;font-weight:700;text-decoration:underline;text-underline-offset:4px;position:relative;z-index:3}@media(max-width:760px){.amager-landing-hero .hero-grid{display:flex;flex-direction:column;gap:24px}.amager-landing-hero .copenhagen-video-card{order:-1;width:100%;padding:18px 12px}.amager-landing-hero .hero-copy{order:1;width:100%}.copenhagen-video-frame{width:267px}.amager-landing-hero{padding-top:20px}} </style>
+.copenhagen-video-card{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px;padding:25px 18px;border:1px solid rgba(200,165,107,.28);border-radius:24px;background:#17241e;box-shadow:0 22px 60px rgba(0,0,0,.22)}.copenhagen-video-card .eyebrow{color:#ead6b2!important;margin:0}.copenhagen-video-frame{width:267px;max-width:100%;min-height:476px;overflow:hidden;border-radius:14px;background:#101713}.copenhagen-video-frame iframe{display:block;max-width:100%}.copenhagen-video-link{color:#ead6b2!important;font-weight:700;text-decoration:underline;text-underline-offset:4px;position:relative;z-index:3}@media(max-width:760px){.amager-landing-hero .hero-grid{display:flex;flex-direction:column;gap:24px}.amager-landing-hero .copenhagen-video-card{order:-1;width:100%;padding:18px 12px}.amager-landing-hero .hero-copy{order:1;width:100%}.copenhagen-video-frame{width:267px}.amager-landing-hero{padding-top:20px}} 
+/* Mobile: keep the video visible, centred and free of horizontal overflow. */
+.amager-landing-hero .hero-grid,.amager-landing-hero .hero-copy,.copenhagen-video-card{min-width:0}
+.copenhagen-video-frame{aspect-ratio:267/476;height:auto;min-height:0;width:min(267px,100%);max-width:100%;overflow:hidden}
+.copenhagen-video-frame iframe{width:100%;height:100%;aspect-ratio:267/476;display:block}
+@media(max-width:760px){
+ .amager-landing-hero{overflow:hidden;padding:18px 0 44px}
+ .amager-landing-hero .hero-grid{display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:26px!important}
+ .amager-landing-hero .copenhagen-video-card{order:-1!important;width:100%!important;max-width:420px;margin:0 auto;padding:18px 12px;box-sizing:border-box}
+ .amager-landing-hero .hero-copy{order:1!important;width:100%;max-width:100%}
+ .amager-landing-hero h1{font-size:clamp(2.25rem,10vw,3.6rem);overflow-wrap:break-word}
+ .amager-landing-hero .hero-actions{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
+ .amager-landing-hero .hero-actions .button{width:100%;white-space:normal}
+ .copenhagen-video-card .eyebrow{text-align:center}
+}
+@media(max-width:380px){.copenhagen-video-card{padding:14px 8px!important}.copenhagen-video-frame{width:min(250px,100%)}}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Gå til indhold</a>
